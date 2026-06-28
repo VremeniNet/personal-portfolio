@@ -1,6 +1,9 @@
 import { JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 
+//Components
+import Header from '@/components/Header'
+
 const jetbrainsMono = JetBrains_Mono({
 	subsets: ['latin', 'cyrillic'],
 	weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
@@ -15,7 +18,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang='ru' className={`${jetbrainsMono.variable}  h-full antialiased`}>
-			<body className='min-h-full flex flex-col'>{children}</body>
+			<body className='min-h-full flex flex-col'>
+				<Header />
+				{children}
+			</body>
 		</html>
 	)
 }
