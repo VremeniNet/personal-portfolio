@@ -9,7 +9,7 @@ const links = [
 		path: '/',
 	},
 	{
-		name: 'Обо мне',
+		name: 'Навыки',
 		path: '/services',
 	},
 	{
@@ -30,11 +30,11 @@ const Nav = () => {
 	const pathname = usePathname()
 	return (
 		<nav className='flex gap-8'>
-			{links.map((link, index) => {
+			{links.map(link => {
 				return (
 					<Link
 						href={link.path}
-						key={index}
+						key={link.path}
 						className={`${link.path === pathname && 'text-accent border-b-2 border-accent'} font-medium hover:text-accent transition-all`}
 					>
 						{link.name}
